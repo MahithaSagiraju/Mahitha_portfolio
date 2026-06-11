@@ -176,6 +176,27 @@ async function seedData() {
       url: "",
       order: 2,
     },
+    {
+      title: "Full Stack Development Internship — CodeAlpha",
+      issuer: "CodeAlpha",
+      date: "2026",
+      url: "https://www.linkedin.com/posts/mahitha-sagiraju-bab928316_internship-completion-activity-7467869577805201408-ZHNs",
+      order: 3,
+    },
+    {
+      title: "Web Development Internship — Sqrock IT Solutions",
+      issuer: "Sqrock IT Solutions",
+      date: "2026",
+      url: "https://www.linkedin.com/posts/mahitha-sagiraju-bab928316_internship-completion-certificate-activity-7467116545106960384-69Dr",
+      order: 4,
+    },
+    {
+      title: "Artificial Intelligence Internship — Averixis Solutions",
+      issuer: "Averixis Solutions",
+      date: "2025",
+      url: "https://www.linkedin.com/posts/mahitha-sagiraju-bab928316_internship-completion-activity-7416788102821658624-_fjv",
+      order: 5,
+    },
   ])
 
   await Setting.insertMany([

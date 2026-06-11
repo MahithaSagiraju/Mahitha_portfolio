@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { usePortfolio } from "../../hooks/usePortfolio"
 
 const phrases = [
-  "AI Engineer & Full Stack Developer",
-  "AI Engineer",
+  "AI developer",
   "Full Stack Developer",
 ]
 
@@ -117,8 +116,8 @@ export default function Hero() {
 
           <div className="relative flex flex-col items-center gap-4">
             <div className="w-[min(360px,100%)] aspect-square rounded-full p-[10px] bg-[conic-gradient(from_180deg,rgba(96,165,250,0.9),rgba(167,139,250,0.85),rgba(96,165,250,0.9))] shadow-[0_18px_55px_rgba(0,0,0,0.45)]">
-              <div className="w-full h-full rounded-full border border-white/10 overflow-hidden bg-[#071225] flex items-center justify-center text-6xl font-bold text-gradient">
-                {settings.name?.charAt(0) || "M"}
+              <div className="w-full h-full rounded-full border border-white/10 overflow-hidden bg-[#071225] flex items-center justify-center">
+                <img src="/profile.png" alt={settings.name} className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; (e.target as HTMLImageElement).parentElement!.innerHTML = '<span class=\"text-6xl font-bold text-gradient\">' + (settings.name?.charAt(0) || 'M') + '</span>' }} />
               </div>
             </div>
             <div className="relative bottom-0 w-full max-w-[420px] p-4 rounded-[18px] bg-[rgba(10,14,24,0.7)] border border-white/10 backdrop-blur-[12px] shadow-[0_20px_50px_rgba(0,0,0,0.35)]">

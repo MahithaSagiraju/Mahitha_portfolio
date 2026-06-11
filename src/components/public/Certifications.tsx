@@ -20,7 +20,11 @@ export default function Certifications() {
                 {certIcons[i] || "🎓"}
               </div>
               <div>
-                <h3 className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide">{cert.title}</h3>
+                {cert.url ? (
+                  <a href={cert.url} target="_blank" rel="noreferrer" className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide hover:text-blue-400 transition-colors block">{cert.title}</a>
+                ) : (
+                  <h3 className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide">{cert.title}</h3>
+                )}
                 <p className="text-white/70">{cert.issuer}{cert.date ? ` • ${cert.date}` : ""}</p>
               </div>
             </div>
