@@ -1,16 +1,17 @@
+import ScrollReveal from "../shared/ScrollReveal"
+
 export default function Footer() {
   return (
-    <footer className="py-8 border-t border-white/10 bg-black/25">
-      <div className="container mx-auto px-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between" style={{ maxWidth: "var(--container, 1100px)" }}>
-        <div>
-          <p className="text-white/80 font-semibold">Built for growth-focused teams.</p>
-          <p className="text-white/60 text-sm mt-1">© {new Date().getFullYear()} Sagiraju Mahitha. All rights reserved.</p>
+    <ScrollReveal>
+      <footer className="py-8 border-t border-white/5 bg-black/20">
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ maxWidth: "var(--container, 1100px)" }}>
+          <p className="text-white/40 text-sm">&copy; {new Date().getFullYear()} Sagiraju Mahitha. Built with passion.</p>
+          <a href="#home" className="text-sm text-white/40 px-4 py-2 rounded-[12px] border border-white/10 bg-white/5 hover:-translate-y-1 hover:bg-white/10 hover:text-white/70 hover:border-blue-400/20 transition-all duration-300 inline-flex items-center gap-2">
+            Back to top
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+          </a>
         </div>
-        <div className="flex items-center gap-3">
-          <a href="#home" className="text-sm text-white/70 px-3 py-1.5 rounded-[14px] border border-white/10 bg-white/5 hover:-translate-y-0.5 hover:bg-white/10 transition-all">Back to top</a>
-          <a href="#contact" className="text-sm text-white/90 px-3 py-1.5 rounded-[14px] border border-blue-400/20 bg-blue-500/10 hover:bg-blue-500/20 transition-all">Get in touch</a>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </ScrollReveal>
   )
 }
