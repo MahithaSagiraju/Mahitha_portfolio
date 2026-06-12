@@ -8,8 +8,8 @@ export default function About() {
     <section id="about" className="py-20 scroll-mt-[86px]">
       <div className="container mx-auto px-4" style={{ maxWidth: "var(--container, 1100px)" }}>
         <header className="mb-6">
-          <h2 className="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl -tracking-wide">About</h2>
-          <p className="text-white/60">A quick snapshot of who I am and what I'm aiming for.</p>
+          <h2 className="section-heading">About</h2>
+          <p className="section-subtitle">A quick snapshot of who I am and what I'm aiming for.</p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 items-start">

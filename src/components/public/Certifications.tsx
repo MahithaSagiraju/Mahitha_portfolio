@@ -9,8 +9,8 @@ export default function Certifications() {
     <section id="certifications" className="py-20 scroll-mt-[86px]">
       <div className="container mx-auto px-4" style={{ maxWidth: "var(--container, 1100px)" }}>
         <header className="mb-6">
-          <h2 className="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl -tracking-wide">Certifications</h2>
-          <p className="text-white/60">Credentials that support my learning.</p>
+          <h2 className="section-heading">Certifications</h2>
+          <p className="section-subtitle">Credentials that support my learning.</p>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -20,12 +20,15 @@ export default function Certifications() {
                 {certIcons[i] || "🎓"}
               </div>
               <div>
-                {cert.url ? (
-                  <a href={cert.url} target="_blank" rel="noreferrer" className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide hover:text-blue-400 transition-colors block">{cert.title}</a>
-                ) : (
-                  <h3 className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide">{cert.title}</h3>
-                )}
-                <p className="text-white/70">{cert.issuer}{cert.date ? ` • ${cert.date}` : ""}</p>
+                <div className="flex flex-wrap items-center gap-2">
+                  {cert.url ? (
+                    <a href={cert.url} target="_blank" rel="noreferrer" className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide hover:text-blue-400 transition-colors block">{cert.title}</a>
+                  ) : (
+                    <h3 className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide">{cert.title}</h3>
+                  )}
+                  <span className="rounded-full bg-white/5 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 border border-white/10">Verified</span>
+                </div>
+                <p className="text-white/70 mt-1">{cert.issuer}{cert.date ? ` • ${cert.date}` : ""}</p>
               </div>
             </div>
           ))}

@@ -23,8 +23,8 @@ export default function Contact() {
     <section id="contact" className="py-20 scroll-mt-[86px] border-t border-b border-white/5 bg-gradient-to-b from-white/[0.02] to-white/[0.01]">
       <div className="container mx-auto px-4" style={{ maxWidth: "var(--container, 1100px)" }}>
         <header className="mb-6">
-          <h2 className="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl -tracking-wide">Contact</h2>
-          <p className="text-white/60">Have an opportunity or want to collaborate? Send a message.</p>
+          <h2 className="section-heading">Contact</h2>
+          <p className="section-subtitle">Have an opportunity or want to collaborate? Send a message.</p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-4 items-start">

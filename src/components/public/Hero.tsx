@@ -70,6 +70,7 @@ export default function Hero() {
   }, [])
 
   if (!settings) return null
+  const role = settings.title || "AI Developer"
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
@@ -79,20 +80,20 @@ export default function Hero() {
           <div className="animate-[fadeIn_0.7s_ease]">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-sm mb-4">
               <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 shadow-[0_0_0_4px_rgba(34,197,94,0.12)]" />
-              Open to internships & entry roles
+              Professional portfolio for {role}
             </div>
 
             <h1 className="font-['Plus_Jakarta_Sans'] text-4xl sm:text-5xl lg:text-6xl leading-tight -tracking-wide mb-3">
               Hi, I'm <span className="text-gradient">{settings.name}</span>.
               <span className="block text-lg sm:text-xl text-white/70 font-semibold mt-2">
-                <span>{text}</span>
+                {role} / <span>{text}</span>
                 <span className="inline-block w-[10px] h-[1.15em] ml-1.5 translate-y-[3px] rounded-full bg-white/70 animate-[blink_900ms_ease-in-out_infinite]" />
               </span>
             </h1>
 
-            <p className="text-white/70 max-w-[62ch]">{settings.bio}</p>
+            <p className="text-white/70 max-w-[62ch] text-lg leading-relaxed">{settings.bio}</p>
 
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#projects" className="inline-flex items-center justify-center px-4 py-3 rounded-[16px] border border-white/10 bg-gradient-to-r from-blue-400/95 to-purple-400/80 text-white/95 font-bold shadow-[0_18px_40px_rgba(96,165,250,0.16)] hover:-translate-y-0.5 hover:brightness-105 transition-all">
                 View Projects
               </a>

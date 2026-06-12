@@ -8,8 +8,8 @@ export default function Education() {
     <section id="education" className="py-20 scroll-mt-[86px] border-t border-b border-white/5 bg-gradient-to-b from-white/[0.02] to-white/[0.01]">
       <div className="container mx-auto px-4" style={{ maxWidth: "var(--container, 1100px)" }}>
         <header className="mb-6">
-          <h2 className="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl -tracking-wide">Education</h2>
-          <p className="text-white/60">Academic background and achievements.</p>
+          <h2 className="section-heading">Education</h2>
+          <p className="section-subtitle">Academic background and achievements.</p>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -1,3 +1,4 @@
+import Navbar from "../components/public/Navbar"
 import Hero from "../components/public/Hero"
 import About from "../components/public/About"
 import Skills from "../components/public/Skills"
@@ -11,6 +12,7 @@ import Footer from "../components/public/Footer"
 export default function Home() {
   return (
     <>
+      <Navbar />
       <Hero />
       <About />
       <Skills />
