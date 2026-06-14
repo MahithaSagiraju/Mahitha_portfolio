@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import { PortfolioProvider } from "./contexts/PortfolioContext"
 import { AnalyticsProvider } from "./contexts/AnalyticsContext"
 import { AnalyticsTracker } from "./components/shared/AnalyticsTracker"
+import Navbar from "./components/public/Navbar"
 import Home from "./pages/Home"
 import AdminLayout from "./components/admin/AdminLayout"
 import Login from "./pages/admin/Login"
@@ -19,6 +20,7 @@ function PublicLayout() {
     <PortfolioProvider>
       <AnalyticsProvider>
         <AnalyticsTracker />
+        <Navbar />
         <Home />
       </AnalyticsProvider>
     </PortfolioProvider>

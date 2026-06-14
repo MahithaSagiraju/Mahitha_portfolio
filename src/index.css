@@ -3,6 +3,61 @@
 @tailwind utilities;
 
 :root {
+  /* Premium 2026 token set (Luxury SaaS / futuristic) */
+  --bg: #071225; /* deep midnight */
+  --bg-2: #050a14;
+
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.09);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+  --muted-2: rgba(255, 255, 255, 0.54);
+  --line: rgba(255, 255, 255, 0.12);
+
+  /* Brand gradients */
+  --brand: #60a5fa; /* #60A5FA */
+  --brand-2: #a78bfa; /* #A78BFA */
+  --accent-3: #f472b6; /* #F472B6 */
+
+  --gradient-start: #60a5fa;
+  --gradient-end: #a78bfa;
+
+  --bg-accent-1: rgba(96, 165, 250, 0.34);
+  --bg-accent-2: rgba(167, 139, 250, 0.28);
+
+  /* Geometry */
+  --radius: 18px;
+  --radius-sm: 14px;
+  --radius-lg: 26px;
+
+  --container: 1100px;
+
+  /* Elevation */
+  --shadow-1: 0 12px 48px rgba(96, 165, 250, 0.18);
+  --shadow-2: 0 28px 80px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.45);
+
+  /* Header */
+  --header-bg: rgba(7, 18, 37, 0.65);
+  --header-border: rgba(255, 255, 255, 0.12);
+  --header-shadow: 0 10px 50px rgba(0, 0, 0, 0.18);
+
+  /* Buttons */
+  --button-bg: rgba(255, 255, 255, 0.08);
+  --button-border: rgba(255, 255, 255, 0.12);
+  --button-text: rgba(255, 255, 255, 0.92);
+  --button-hover-bg: rgba(255, 255, 255, 0.14);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.2, 0.9, 0.2, 1);
+  --dur-1: 160ms;
+  --dur-2: 260ms;
+  --dur-3: 420ms;
+}
+
+
+.theme-dark {
   --bg: #071225;
   --surface: rgba(255, 255, 255, 0.06);
   --surface-2: rgba(255, 255, 255, 0.09);
@@ -11,10 +66,47 @@
   --line: rgba(255, 255, 255, 0.12);
   --brand: #60a5fa;
   --brand-2: #a78bfa;
-  --shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
-  --radius: 18px;
-  --container: 1100px;
-  --header-h: 72px;
+  --gradient-start: #60a5fa;
+  --gradient-end: #a78bfa;
+  --bg-accent-1: rgba(96, 165, 250, 0.34);
+  --bg-accent-2: rgba(167, 139, 250, 0.28);
+}
+
+.theme-light {
+  --bg: #f7f8fb;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-2: rgba(255, 255, 255, 0.98);
+  --text: rgba(15, 23, 42, 0.92);
+  --muted: rgba(55, 65, 81, 0.68);
+  --line: rgba(15, 23, 42, 0.12);
+  --brand: #2563eb;
+  --brand-2: #8b5cf6;
+  --gradient-start: #2563eb;
+  --gradient-end: #8b5cf6;
+  --bg-accent-1: rgba(59, 130, 246, 0.18);
+  --bg-accent-2: rgba(139, 92, 246, 0.14);
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --header-border: rgba(148, 163, 184, 0.18);
+  --button-bg: rgba(255, 255, 255, 0.92);
+  --button-border: rgba(148, 163, 184, 0.18);
+  --button-text: rgba(15, 23, 42, 0.92);
+  --button-hover-bg: rgba(255, 255, 255, 0.98);
+  --header-shadow: 0 10px 50px rgba(15, 23, 42, 0.12);
+}
+
+.theme-ocean {
+  --bg: #051d3a;
+  --surface: rgba(15, 37, 70, 0.75);
+  --surface-2: rgba(15, 37, 70, 0.9);
+  --text: rgba(235, 245, 255, 0.95);
+  --muted: rgba(196, 210, 255, 0.68);
+  --line: rgba(148, 163, 184, 0.18);
+  --brand: #38bdf8;
+  --brand-2: #60a5fa;
+  --gradient-start: #38bdf8;
+  --gradient-end: #60a5fa;
+  --bg-accent-1: rgba(56, 189, 248, 0.22);
+  --bg-accent-2: rgba(96, 165, 250, 0.18);
 }
 
 html {
@@ -29,6 +121,22 @@ body {
     linear-gradient(180deg, #050a14 0%, var(--bg) 55%, #050a14 100%);
   line-height: 1.6;
   min-height: 100vh;
+
+  /* Smooth scrolling + better painting */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+html.theme-light body {
+  background: radial-gradient(1200px 900px at 10% -10%, rgba(247, 248, 251, 0.95), rgba(247, 248, 251, 0.15) 62%),
+    linear-gradient(180deg, #f8fafc 0%, var(--bg) 55%, #f8fafc 100%);
+}
+
+html.theme-ocean body {
+  background: radial-gradient(1200px 900px at 10% -10%, rgba(10, 37, 61, 0.95), rgba(5, 14, 30, 0.15) 62%),
+    linear-gradient(180deg, #051a34 0%, var(--bg) 55%, #051a34 100%);
 }
 
 body::before {
@@ -38,10 +146,10 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(520px 420px at 18% 22%, rgba(96, 165, 250, 0.34), transparent 60%),
-    radial-gradient(560px 460px at 82% 18%, rgba(167, 139, 250, 0.28), transparent 62%),
-    radial-gradient(520px 460px at 74% 76%, rgba(96, 165, 250, 0.16), transparent 64%),
-    radial-gradient(560px 520px at 24% 86%, rgba(167, 139, 250, 0.16), transparent 66%);
+    radial-gradient(520px 420px at 18% 22%, var(--bg-accent-1), transparent 60%),
+    radial-gradient(560px 460px at 82% 18%, var(--bg-accent-2), transparent 62%),
+    radial-gradient(520px 460px at 74% 76%, var(--bg-accent-1), transparent 64%),
+    radial-gradient(560px 520px at 24% 86%, var(--bg-accent-2), transparent 66%);
   filter: blur(26px);
   opacity: 0.95;
   animation: bgFloat 18s ease-in-out infinite alternate;
@@ -120,14 +228,14 @@ body::after {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 70%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 70%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .text-gradient-animated {
-  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6, #60a5fa);
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), #f472b6, var(--gradient-start));
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -145,16 +253,21 @@ body::after {
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+  box-shadow: var(--shadow-2);
   backdrop-filter: blur(18px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform var(--dur-2) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
 }
+
 
 .glass-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 32px 80px rgba(96, 165, 250, 0.12);
   border-color: rgba(96, 165, 250, 0.25);
 }
+
 
 .glow-border {
   position: relative;
@@ -221,7 +334,7 @@ body::after {
   padding: 0.85rem 1.6rem;
   border-radius: 16px;
   border: none;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   color: white;
   font-weight: 700;
   font-size: 0.95rem;

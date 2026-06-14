@@ -29,6 +29,7 @@ export default function Contact() {
             <div className="section-label mb-4 w-fit">Contact</div>
             <h2 className="section-heading">Let's work together</h2>
             <p className="section-subtitle mt-2">Have an opportunity or want to collaborate? Send a message.</p>
+            <p className="text-white/50 text-sm mt-3">Best reached via LinkedIn or my resume email. I reply quickly to relevant roles and collaboration requests.</p>
           </header>
         </ScrollReveal>
 
@@ -36,18 +37,18 @@ export default function Contact() {
           <ScrollReveal delay={0.1}>
             <form onSubmit={handleSubmit} className="glass-card p-6 card-shine group">
               <div className="grid gap-2 mb-5">
-                <label className="font-semibold text-white/70 text-sm">Name</label>
-                <input type="text" placeholder="Your name" required value={name} onChange={(e) => setName(e.target.value)}
+                <label htmlFor="contact-name" className="font-semibold text-white/70 text-sm">Name</label>
+                <input id="contact-name" type="text" placeholder="Your name" required value={name} onChange={(e) => setName(e.target.value)}
                   className="w-full rounded-[14px] border border-white/10 bg-black/20 text-white/90 p-3.5 outline-none focus:border-blue-400/40 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(96,165,250,0.08)] transition-all duration-300 placeholder:text-white/30" />
               </div>
               <div className="grid gap-2 mb-5">
-                <label className="font-semibold text-white/70 text-sm">Email</label>
-                <input type="email" placeholder="you@example.com" required value={email} onChange={(e) => setEmail(e.target.value)}
+                <label htmlFor="contact-email" className="font-semibold text-white/70 text-sm">Email</label>
+                <input id="contact-email" type="email" placeholder="you@example.com" required value={email} onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-[14px] border border-white/10 bg-black/20 text-white/90 p-3.5 outline-none focus:border-blue-400/40 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(96,165,250,0.08)] transition-all duration-300 placeholder:text-white/30" />
               </div>
               <div className="grid gap-2 mb-6">
-                <label className="font-semibold text-white/70 text-sm">Message</label>
-                <textarea rows={4} placeholder="Write your message..." required value={message} onChange={(e) => setMessage(e.target.value)}
+                <label htmlFor="contact-message" className="font-semibold text-white/70 text-sm">Message</label>
+                <textarea id="contact-message" rows={4} placeholder="Write your message..." required value={message} onChange={(e) => setMessage(e.target.value)}
                   className="w-full rounded-[14px] border border-white/10 bg-black/20 text-white/90 p-3.5 outline-none focus:border-blue-400/40 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(96,165,250,0.08)] transition-all duration-300 placeholder:text-white/30 resize-none" />
               </div>
               <button type="submit" className="btn-primary w-full">
@@ -69,7 +70,7 @@ export default function Contact() {
                     { icon: "GH", label: "GitHub", url: settings.github, color: "hover:border-purple-500/30" },
                     { icon: "@", label: "Email", url: `mailto:${settings.email}`, color: "hover:border-emerald-500/30" },
                   ].map((s, idx) => (
-                    <a key={idx} href={s.url} target="_blank" rel="noreferrer"
+                    <a key={idx} href={s.url} target="_blank" rel="noreferrer noopener"
                       className={`flex items-center gap-3 p-3.5 rounded-[14px] border border-white/10 bg-white/5 text-white/70 hover:-translate-y-0.5 hover:bg-white/10 ${s.color} transition-all duration-300 group/link`}>
                       <span className="h-[38px] w-[38px] rounded-[12px] flex items-center justify-center bg-white/5 border border-white/10 font-extrabold text-sm group-hover/link:scale-110 group-hover/link:bg-gradient-to-br group-hover/link:from-blue-500/20 group-hover/link:to-purple-500/20 transition-all duration-300">
                         {s.icon}
@@ -81,7 +82,7 @@ export default function Contact() {
                 </div>
                 <div className="mt-5 pt-4 border-t border-white/10">
                   {settings.resumeUrl && (
-                    <a href={settings.resumeUrl} target="_blank" rel="noreferrer" className="btn-ghost text-sm w-full justify-center">
+                    <a href={settings.resumeUrl} target="_blank" rel="noreferrer noopener" className="btn-ghost text-sm w-full justify-center">
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                       Download Resume
                     </a>

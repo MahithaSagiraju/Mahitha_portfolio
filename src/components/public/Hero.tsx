@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react"
 import { usePortfolio } from "../../hooks/usePortfolio"
 
 const phrases = [
-  "AI Engineer & Full Stack Developer",
-  "AI Engineer",
+  "AI Developer",
   "Full Stack Developer",
+  "AI Full Stack Developer",
 ]
 
 export default function Hero() {
@@ -133,16 +133,24 @@ export default function Hero() {
               Open to internships & entry roles
             </div>
 
-            <h1 className="font-['Plus_Jakarta_Sans'] text-4xl sm:text-5xl lg:text-6xl leading-tight -tracking-wide mb-4">
-              Hi, I'm{" "}
-              <span className="text-gradient-animated inline-block">{settings.name}</span>
-              <span className="block text-lg sm:text-xl text-white/70 font-semibold mt-3">
-                <span>{text}</span>
-                <span className="inline-block w-[3px] h-[1.2em] ml-1 translate-y-[2px] rounded-full bg-blue-400 animate-[blink_900ms_ease-in-out_infinite]" />
-              </span>
-            </h1>
+            <div className="mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/70 text-sm hover:bg-white/10 hover:border-blue-400/30 transition-all duration-300">
+                <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse" />
+                Ready for top-tier software engineering opportunities
+              </div>
 
-            <p className="text-white/60 max-w-[58ch] text-lg leading-relaxed">{settings.bio}</p>
+              <h1 className="font-['Plus_Jakarta_Sans'] text-4xl sm:text-5xl lg:text-6xl leading-tight -tracking-wide mt-4">
+                Hi, I'm{" "}
+                <span className="text-gradient-animated inline-block">{settings.name}</span>
+                <span className="block text-lg sm:text-xl text-white/70 font-semibold mt-3">
+                  <span>{text}</span>
+                  <span className="inline-block w-[3px] h-[1.2em] ml-1 translate-y-[2px] rounded-full bg-blue-400 animate-[blink_900ms_ease-in-out_infinite]" />
+                </span>
+              </h1>
+
+              <p className="text-white/60 max-w-[58ch] text-lg leading-relaxed mt-3">{settings.bio}</p>
+            </div>
+
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="btn-primary group">
@@ -152,6 +160,24 @@ export default function Hero() {
               <a href="#contact" className="btn-ghost group">
                 Contact Me
               </a>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-3 items-center text-sm text-white/70">
+              {settings.resumeUrl && (
+                <a href={settings.resumeUrl} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 transition-all duration-300">
+                  Resume
+                </a>
+              )}
+              {settings.github && (
+                <a href={settings.github} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 transition-all duration-300">
+                  GitHub
+                </a>
+              )}
+              {settings.linkedin && (
+                <a href={settings.linkedin} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 transition-all duration-300">
+                  LinkedIn
+                </a>
+              )}
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
@@ -180,23 +206,6 @@ export default function Hero() {
                     const parent = target.parentElement!
                     parent.innerHTML = '<span class="text-6xl font-bold text-gradient" style="display:flex;align-items:center;justify-content:center;height:100%">' + (settings.name?.charAt(0) || "M") + "</span>"
                   }} />
-              </div>
-            </div>
-
-            <div className="w-full max-w-[380px] p-5 rounded-[18px] bg-[rgba(10,14,24,0.75)] border border-white/10 backdrop-blur-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-blue-400/20 transition-all duration-300"
-              style={{ animation: "floatSlow 6s ease-in-out infinite" }}>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-bold text-sm text-white/80">Currently learning</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {["React", "Node.js", "Python"].map((t, idx) => (
-                  <span key={t}
-                    className="inline-flex items-center px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm font-semibold hover:bg-blue-500/15 hover:border-blue-400/30 hover:text-blue-300 transition-all duration-300"
-                    style={{ animation: `fadeInUp 0.5s ease ${0.1 * idx}s both` }}>
-                    {t}
-                  </span>
-                ))}
               </div>
             </div>
 

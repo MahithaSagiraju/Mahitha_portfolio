@@ -28,7 +28,7 @@ export default function Certifications() {
                 </div>
                 <div>
                   {cert.url ? (
-                    <a href={cert.url} target="_blank" rel="noreferrer" className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide hover:text-blue-400 transition-colors block group-hover:text-gradient transition-all duration-300">
+                    <a href={cert.url} target="_blank" rel="noreferrer noopener" className="text-lg font-['Plus_Jakarta_Sans'] -tracking-wide hover:text-blue-400 transition-colors block group-hover:text-gradient transition-all duration-300">
                       {cert.title}
                       <svg className="w-3.5 h-3.5 inline ml-1.5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     </a>

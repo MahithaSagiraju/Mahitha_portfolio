@@ -6,6 +6,20 @@ export default function About() {
   const { settings } = usePortfolio()
   if (!settings) return null
 
+  const filteredHighlights = settings.aboutHighlights?.filter(
+    (h) => ![
+      "HTML • CSS • JS",
+      "Frontend",
+      "8",
+      "CGPA (B.Tech)",
+    ].includes(h.value.toString()) && ![
+      "HTML • CSS • JS",
+      "Frontend",
+      "8",
+      "CGPA (B.Tech)",
+    ].includes(h.label)
+  )
+
   return (
     <section id="about" className="py-24 scroll-mt-[86px] relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/[0.02] to-transparent pointer-events-none" />
@@ -23,7 +37,7 @@ export default function About() {
               <h3 className="text-xl font-['Plus_Jakarta_Sans'] -tracking-wide mb-3">Student • Builder • Curious</h3>
               <p className="text-white/65 leading-relaxed">{settings.bio}</p>
               <div className="mt-6 grid grid-cols-3 gap-3">
-                {settings.aboutHighlights?.map((h, i) => (
+                {filteredHighlights?.map((h, i) => (
                   <div key={i} className="p-4 rounded-[16px] border border-white/10 bg-white/5 hover:bg-gradient-to-br hover:from-blue-500/10 hover:to-purple-500/10 hover:border-blue-400/20 transition-all duration-300 group">
                     <AnimatedCounter value={h.value} />
                     <div className="mt-1 text-white/55 text-sm">{h.label}</div>
